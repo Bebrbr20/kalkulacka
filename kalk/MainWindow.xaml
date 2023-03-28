@@ -5,49 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kalk"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+        Title="MainWindow"
+        Height="450"
+        Width="377"
+        MinWidth="150"
+        MinHeight="200"
+        >
 
-        </Grid.RowDefinitions>
+   
+        <Grid>
 
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
 
-
-        <Button Content="0" Grid.Row="4" Grid.Column="1"  Click="Button_Click" />
-        <Button Content="." Grid.Row="4" Grid.Column="2"  Click="Button_Click" />
-        <Button Content="=" Grid.Row="4" Grid.Column="3"  Click="Result_Click" />
-
-        <Button Content="1"  Grid.Row="3" Click="Button_Click" />
-        <Button Content="2" Grid.Row="3" Grid.Column="1"  Click="Button_Click" />
-        <Button Content="3" Grid.Row="3" Grid.Column="2"  Click="Button_Click" />
-        <Button Content="+" Grid.Row="3" Grid.Column="3"  Click="Button_Click" />
-
-        <Button Content="4"  Grid.Row="2"  Click="Button_Click" />
-        <Button Content="5" Grid.Row="2" Grid.Column="1"  Click="Button_Click" />
-        <Button Content="6" Grid.Row="2" Grid.Column="2"  Click="Button_Click" />
-        <Button Content="-" Grid.Row="2" Grid.Column="3"  Click="Button_Click" />
-
-        <Button Content="7" Grid.Row="1"  Click="Button_Click" />
-        <Button Content="8" Grid.Row="1" Grid.Column="1"  Click="Button_Click" />
-        <Button Content="9" Grid.Row="1" Grid.Column="2"  Click="Button_Click" />
-        <Button Content="*" Grid.Row="1" Grid.Column="3"  Click="Button_Click" />
+            </Grid.RowDefinitions>
 
 
-        <Button Content="CE" Grid.Column="2"  Click="Operator_Click" />
-        <Button Content="C" Grid.Column="3"  Click="Operator_Click" />
-        <Label x:Name="displayer"  Grid.ColumnSpan="2" />
+            <Button Content="0" Grid.Row="4" Grid.Column="1"  Click="Button_Click" />
+            <Button Content="." Grid.Row="4" Grid.Column="2"  Click="Button_Click" />
+            <Button Content="=" Grid.Row="4" Grid.Column="3"  Click="Result_Click" />
 
-    </Grid>
+            <Button Content="1"  Grid.Row="3" Click="Button_Click" />
+            <Button Content="2" Grid.Row="3" Grid.Column="1"  Click="Button_Click" />
+            <Button Content="3" Grid.Row="3" Grid.Column="2"  Click="Button_Click" />
+            <Button Content="+" Grid.Row="3" Grid.Column="3"  Click="Button_Click" />
+
+            <Button Content="4"  Grid.Row="2"  Click="Button_Click" />
+        <Button Content="5" Grid.Row="2" Grid.Column="1"  Click="Button_Click"/>
+            <Button Content="6" Grid.Row="2" Grid.Column="2"  Click="Button_Click" />
+            <Button Content="-" Grid.Row="2" Grid.Column="3"  Click="Button_Click" />
+
+            <Button Content="7" Grid.Row="1"  Click="Button_Click" />
+            <Button Content="8" Grid.Row="1" Grid.Column="1"  Click="Button_Click" />
+            <Button Content="9" Grid.Row="1" Grid.Column="2"  Click="Button_Click" />
+            <Button Content="*" Grid.Row="1" Grid.Column="3"  Click="Button_Click" />
+
+
+            <Button Content="CE" Grid.Column="2"  Click="Operator_Click" />
+            <Button Content="C" Grid.Column="3"  Click="Operator_Click" />
+            <Label x:Name="displayer"  Grid.ColumnSpan="2" />
+
+        </Grid>
+  
 
 </Window>

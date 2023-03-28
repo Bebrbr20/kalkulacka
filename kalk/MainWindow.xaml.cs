@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -26,7 +27,7 @@ namespace kalk
         {
             public static string display { get; set; }
 
-            public static string operace { get; set; }
+            public static bool operace { get; set; }
 
             public static bool operaceZmacknuto { get; set; }
 
@@ -36,6 +37,7 @@ namespace kalk
         {
             InitializeComponent();
 
+            Variables.operace = false;  
         }
 
        
@@ -46,24 +48,71 @@ namespace kalk
             string BtnName;
             BtnName = (sender as System.Windows.Controls.Button).Content.ToString();
 
-
             
 
-            displayer.Content = displayer.Content + BtnName;
+            if (Variables.operaceZmacknuto != true)
+            {
+                displayer.Content = displayer.Content + BtnName;
+
+                Variables.operace = true;
+            }
+            else
+            {
+                int Num;
+                bool isNum = int.TryParse(BtnName.ToString(), out Num);
+                if (isNum)
+                {
+                    displayer.Content = displayer.Content + BtnName;
+                }
+                
+            }
+            
+            switch (BtnName)
+            {
+                case "*":
+                    Variables.operaceZmacknuto = true;
+                    break;
+                case "/":
+                    Variables.operaceZmacknuto = true;
+                    break;
+                case "-":
+                    Variables.operaceZmacknuto = true;
+                    break;
+                case "+":
+                    Variables.operaceZmacknuto = true;
+                    break;
+                default:
+                    Variables.operaceZmacknuto = false;
+                    break;
+            }
         }
 
         
         private void Result_Click(object sender, RoutedEventArgs e)
         {
-            DataTable dt = new DataTable();
-            var v = dt.Compute(displayer.Content.ToString(), "");
+            if(Variables.operace)
+            {
+                try
+                {
+                    DataTable dt = new DataTable();
+                    var v = dt.Compute(displayer.Content.ToString(), "");
 
-            displayer.Content = v.ToString();
+                    displayer.Content = v.ToString();
+                }
+                catch (InvalidCastException)
+                {
+                    displayer.Content = "err";
+                }
+            }
+            
         }
 
         private void Operator_Click(object sender, RoutedEventArgs e)
         {
+            string BtnName;
+            BtnName = (sender as System.Windows.Controls.Button).Content.ToString();
 
+            displayer.Content = "";
         }
     }
 
